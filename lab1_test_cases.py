@@ -40,6 +40,8 @@ class TestLab1(unittest.TestCase):
         list_val1 = []
         self.assertEqual(bin_search(5, 2, 10, list_val1), None) #Checks for searching an empty list
         
+        self.assertEqual(bin_search(8, 0, 4, [2, 5, 8, 90, 123]), 2) #Tests with a list that isnt just "1, 2, 3, 4, ..."
+
         big_list = [i for i in range(100)]
         self.assertEqual(bin_search(100, 0, 99, big_list), None) #Checks big list for value not present
         self.assertEqual(bin_search(9, 0, 99, big_list), 9) #Checks big list for value that is present
