@@ -35,7 +35,7 @@ def bin_search(target, low, high, int_list):  # must use recursion
    if target in vals:
        return [low, middle, high][vals.index(target)]
 
-   else:# target not in [int_list[low], int_list[high], int_list[middle]]:
+   else:
        if target > int_list[middle]:
            return bin_search(target, middle, high, int_list)
        else:
