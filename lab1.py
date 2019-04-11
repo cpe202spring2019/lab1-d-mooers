@@ -27,14 +27,17 @@ def bin_search(target, low, high, int_list):  # must use recursion
    if int_list == None:
        raise ValueError
    length = len(int_list)
-
-   if length <= 0 or target > int_list[high] or target < int_list[low]:
+   if length <= 0:
        return None
 
    middle = ((high + low) // 2)
    vals = [int_list[low], int_list[middle], int_list[high]]
    if target in vals:
        return [low, middle, high][vals.index(target)]
+
+   if ((high - low) / 2) <= 1 or target > int_list[high] or target < int_list[low]:
+       return None
+
 
    else:
        if target > int_list[middle]:
